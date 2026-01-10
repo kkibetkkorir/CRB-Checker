@@ -238,7 +238,7 @@ header {
 
 /* ===== RESULTS SECTION ===== */
 .results-section {
-  padding: 80px 0;
+  padding: 10px 0;
   background-color: #f8f9fa;
 }
 
@@ -935,17 +935,27 @@ footer {
     font-size: 14px;
   }
 
+  .results-section {
+    padding: 15px 0;
+    margin: 0;
+  }
+
   .results-card {
-    padding: 20px;
+    padding: 10px;
+  }
+
+  .results-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
   }
 
   .result-status {
-    padding: 10px 20px;
+    padding: 10px 10px;
     font-size: 14px;
   }
 
   .results-title-section h3 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .personal-info h4,
@@ -970,8 +980,9 @@ footer {
 
 @media (max-width: 360px) {
   .container {
-    padding: 12px;
+    padding: 8px;
   }
+
 
   .deposit-card {
     padding: 16px;
@@ -1004,5 +1015,44 @@ footer {
 
   .form-control {
     padding: 10px;
+  }
+
+  .loan-apps-section {
+    padding: 10px 0;
+  }
+
+  .loan-apps-grid {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .loan-app-card {
+    border-radius: 6px;
+    padding: 15px;
+    border-left: 2px solid var(--kenya-green);
+  }
+
+  .loan-app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .loan-app-header {
+    margin-bottom: 10px;
+  }
+
+  .loan-app-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    margin-right: 10px;
+  }
+
+  .loan-app-icon i {
+    font-size: 18px;
+  }
+
+  .loan-app-details {
+    margin-bottom: 15px;
   }
 }

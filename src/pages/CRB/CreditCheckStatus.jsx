@@ -28,7 +28,7 @@ const CreditCheckStatus = () => {
 
   const generateResults = (data) => {
     // Generate random results for demonstration
-    const statusOptions = ['Good Standing', 'Default Listed', 'Watch List'];
+    const statusOptions = ['Good Standing', /*'Default Listed',*/ 'Watch List'];
     const randomStatus = statusOptions[Math.floor(Math.random() * statusOptions.length)];
     
     // Format date
@@ -53,9 +53,10 @@ const CreditCheckStatus = () => {
       date: formattedDate,
       status: randomStatus,
       statusClass: randomStatus === 'Good Standing' ? 'status-clear' : 
-                   randomStatus === 'Default Listed' ? 'status-flagged' : 'status-warning',
+                   //randomStatus === 'Default Listed' ? 'status-flagged' : 
+                   'status-warning',
       statusText: randomStatus === 'Good Standing' ? 'No negative listings - Eligible for credit' :
-                  randomStatus === 'Default Listed' ? 'Has defaulted on loan payments - Not eligible for new credit' :
+                  //randomStatus === 'Default Listed' ? 'Has defaulted on loan payments - Not eligible for new credit' :
                   'Some late payments - Limited credit options available'
     };
     
@@ -63,11 +64,11 @@ const CreditCheckStatus = () => {
       resultDetails.score = Math.floor(600 + Math.random() * 200) + '/900 (Good)';
       resultDetails.loans = Math.floor(1 + Math.random() * 3) + ' active loans (KSh ' + Math.floor(10000 + Math.random() * 150000) + ' total)';
       resultDetails.history = (85 + Math.floor(Math.random() * 15)) + '% on-time payments';
-    } else if (randomStatus === 'Default Listed') {
+    }/* else if (randomStatus === 'Default Listed') {
       resultDetails.score = Math.floor(300 + Math.random() * 150) + '/900 (Poor)';
       resultDetails.loans = Math.floor(1 + Math.random() * 4) + ' loans (1 default)';
       resultDetails.history = (40 + Math.floor(Math.random() * 30)) + '% on-time payments';
-    } else {
+    } */else {
       resultDetails.score = Math.floor(450 + Math.random() * 150) + '/900 (Fair)';
       resultDetails.loans = Math.floor(1 + Math.random() * 3) + ' active loans';
       resultDetails.history = (70 + Math.floor(Math.random() * 20)) + '% on-time payments';
@@ -120,7 +121,6 @@ const CreditCheckStatus = () => {
                   </div>
                   <div className={`result-status ${results.statusClass}`}>
                     <i className={results.status === 'Good Standing' ? 'fas fa-check-circle' : 
-                                 results.status === 'Default Listed' ? 'fas fa-exclamation-circle' : 
                                  'fas fa-exclamation-triangle'}></i>
                     {results.status}
                   </div>
@@ -152,18 +152,18 @@ const CreditCheckStatus = () => {
                   <div className="credit-score-section">
                     <h4><i className="fas fa-chart-line"></i> Credit Score Analysis</h4>
                     <div className="score-display">
-                      <div className="score-circle">
+                      {/*<div className="score-circle">
                         <div className="score-value">{results.score.split('/')[0]}</div>
                         <div className="score-total">/900</div>
-                      </div>
+                      </div>*/}
                       <div className="score-details">
-                        <div className="score-grade">{results.score.includes('Good') ? 'GOOD' : results.score.includes('Fair') ? 'FAIR' : 'POOR'}</div>
+                        <div className="score-grade">{results.score.includes('Good') ? 'GOOD' : 'FAIR'/*results.score.includes('Fair') ? 'FAIR' : 'POOR'*/}</div>
                         <p className="score-text">{results.statusText}</p>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="loan-details">
+                  {/*<div className="loan-details">
                     <h4><i className="fas fa-file-invoice-dollar"></i> Loan Details</h4>
                     <div className="details-grid">
                       <div className="detail-item">
@@ -185,7 +185,7 @@ const CreditCheckStatus = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div>*/}
                   
                   <div className="results-footer">
                     <div className="action-buttons">
