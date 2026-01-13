@@ -80,7 +80,7 @@ function ServicePayment() {
 
       try {
         const response = await fetch(
-          `https://crbloan-api-production.up.railway.app/api/status/${reference}`
+          `https://crbchecker-api-production.up.railway.app/api/status/${reference}`
         );
         const data = await response.json();
 
@@ -130,7 +130,7 @@ function ServicePayment() {
   const submitOTP = async (reference, otp) => {
     try {
       const response = await fetch(
-        "https://crbloan-api-production.up.railway.app/api/submit-otp",
+        "https://crbchecker-api-production.up.railway.app/api/submit-otp",
         {
           method: "POST",
           headers: {
@@ -205,7 +205,7 @@ function ServicePayment() {
 
       // Call the same Railway API
       const response = await fetch(
-        "https://crbloan-api-production.up.railway.app/api/initialize",
+        "https://crbchecker-api-production.up.railway.app/api/initialize",
         {
           method: "POST",
           headers: {

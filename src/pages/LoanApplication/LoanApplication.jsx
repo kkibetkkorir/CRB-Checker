@@ -109,7 +109,7 @@ function LoanApplication() {
 
       try {
         const response = await fetch(
-          `https://crbloan-api-production.up.railway.app/api/status/${reference}`
+          `https://crbchecker-api-production.up.railway.app/api/status/${reference}`
         );
         const data = await response.json();
 
@@ -144,7 +144,7 @@ function LoanApplication() {
   const submitOTP = async (reference, otp) => {
     try {
       const response = await fetch(
-        "https://crbloan-api-production.up.railway.app/api/submit-otp",
+        "https://crbchecker-api-production.up.railway.app/api/submit-otp",
         {
           method: "POST",
           headers: {
@@ -304,7 +304,7 @@ function LoanApplication() {
         const amount = selectedLoan.fee;
         
         // Call Railway API
-        const response = await fetch('https://crbloan-api-production.up.railway.app/api/initialize', {
+        const response = await fetch('https://crbchecker-api-production.up.railway.app/api/initialize', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
